@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e1013">
+  <meta name="description" content="韩仪的 Agent 工程作品集：Agent Harness、分层 Memory、RAG 与评测驱动的自进化闭环。">
+  <title>韩仪 · Agent 工程作品集</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="韩仪 · Agent 工程作品集">
+  <meta property="og:description" content="Agent Harness × Agent Memory｜美国东北大学计算机硕士">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" data-bind="brand">韩仪</a>
+    <nav class="nav-links" aria-label="页面章节">
+      <a href="#timeline">经历与作品</a>
+      <a href="#skills">技能</a>
+      <a href="#honors">荣誉</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="切换深浅色主题">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <!-- ── 首屏 ───────────────────────────────────────── -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-bind="status"></span></p>
+        <h1 data-bind="name"></h1>
+        <p class="hero-tagline" data-bind="tagline"></p>
+        <p class="hero-summary" data-bind="summary"></p>
+        <p class="hero-intro" data-bind="intro"></p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#timeline">经历与作品 <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" data-bind="hero-jump" href="#timeline"><span class="hero-jump-label">开源项目</span> <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <aside class="proof-wrap" aria-label="代表性成果">
+        <span class="trace-label" aria-hidden="true">EVIDENCE&nbsp;TRACE</span>
+        <div class="proof-grid" data-render="proof"></div>
+      </aside>
+    </section>
+
+    <!-- ── 时间线 ─────────────────────────────────────── -->
+    <section class="section" id="timeline">
+      <div class="section-head">
+        <h2><span class="section-index">01</span>经历与作品</h2>
+        <p class="section-note">点击任意卡片查看详细拆解</p>
+      </div>
+      <div class="filters" role="tablist" aria-label="筛选分类" data-render="filters"></div>
+      <ol class="timeline" data-render="timeline"></ol>
+      <p class="empty-state" data-render="empty" hidden>该分类下暂无内容。</p>
+    </section>
+
+    <!-- ── 技能 ───────────────────────────────────────── -->
+    <section class="section" id="skills">
+      <div class="section-head">
+        <h2><span class="section-index">02</span>专业技能</h2>
+      </div>
+      <div class="skill-grid" data-render="skills"></div>
+    </section>
+
+    <!-- ── 荣誉 ───────────────────────────────────────── -->
+    <section class="section" id="honors">
+      <div class="section-head">
+        <h2><span class="section-index">03</span>个人荣誉</h2>
+      </div>
+      <ul class="honor-list" data-render="achievements"></ul>
+    </section>
+
+    <!-- ── 联系 ───────────────────────────────────────── -->
+    <section class="section section-contact" id="contact">
+      <div class="section-head">
+        <h2><span class="section-index">04</span>联系方式</h2>
+      </div>
+      <div class="contact-grid" data-render="contact"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span data-bind="footer"></span>
+    <span class="footer-meta">纯静态站点 · 无构建工具 · 部署于 GitHub Pages</span>
+  </footer>
+
+  <!-- ── 详情弹窗 ───────────────────────────────────── -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close aria-label="关闭详情">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="padding:2rem;text-align:center">本站内容由 JavaScript 渲染，请开启 JavaScript 后查看。</p>
+  </noscript>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
