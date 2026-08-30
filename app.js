@@ -41,7 +41,6 @@
   function renderProfile() {
     var p = DATA.profile;
     var map = {
-      brand: p.name,
       name: p.name,
       tagline: p.tagline,
       summary: p.summary,
